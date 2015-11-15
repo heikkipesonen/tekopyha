@@ -1,0 +1,24 @@
+$input-base-color: #ffe6fe;
+$input-hilight-color: #cb45c6;
+$input-complete-base-color: #E6FFF2;
+$input-complete-hilight-color: #45CB87;
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea{
+  padding: 10px 16px 8px 16px;
+  outline: none;
+  border: none;
+  display: block;
+  background-color: $input-base-color;
+  color: $input-hilight-color;
+  border-bottom: 2px solid $input-base-color;
+  transition: 0.2s ease-out;
+  
+  &:active,&:focus{
+    border-bottom: 2px solid $input-hilight-color;
+  }
+}

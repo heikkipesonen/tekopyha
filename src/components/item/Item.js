@@ -1,5 +1,4 @@
 import React from 'react';
-import Barchart from './Barchart';
 
 class Item extends React.Component {
   constructor (props) {
@@ -8,10 +7,6 @@ class Item extends React.Component {
 
   support = () => {
     let item = this.props.src;
-  }
-
-  componentWillReceiveProps () {
-    console.log('PERDE');
   }
 
   render () {

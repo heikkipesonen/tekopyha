@@ -5,10 +5,6 @@
 body {
   color: #222;
   font-family: 'Open Sans', sans-serif;
-  background-image: url('../images/header.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
 }
 
 h1,h2{
@@ -21,12 +17,33 @@ h1,h2{
   left:0;
   bottom: 0;
   right: 0;
+  overflow: hidden;
 }
 
 .background-container{
   background-size: cover;
   background-position: center center;
 }
+
+.view{
+  @extend .container-absolute;
+}
+
+.view-background{
+  @extend .container-absolute;
+  @extend .background-container;
+  z-index: 0;
+}
+
+.view-content{
+  @extend .container-absolute;
+  z-index: 1;
+}
+
+.scroll-y{
+  overflow-y: auto;
+}
+
 
 .header{
   position: relative;
@@ -92,3 +109,4 @@ h1,h2{
 }
 
 @import 'item';
+@import 'input';

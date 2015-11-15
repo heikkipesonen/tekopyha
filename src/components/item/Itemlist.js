@@ -28,15 +28,12 @@ class Itemlist extends React.Component {
 
   render () {
     return (
-      <div className="item-list">
-        <div className="item-list-filters">
-          <div className="item-list-filter">
-            <input type="text"></input>
-          </div>
+      <div className="item-list-wrapper">
+        <div className="item-list">
+          {this.state.items.map((item, index) => {
+            return <Item src={item} key={index}></Item>
+          })}
         </div>
-        {this.state.items.map((item, index) => {
-          return <Item src={item} key={index}></Item>
-        })}
       </div>
     )
   }
