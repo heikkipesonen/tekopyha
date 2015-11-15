@@ -25,10 +25,13 @@ class Item extends React.Component {
         <div className="item-title-wrapper">
           <h3 className="item-title">{this.props.src.title}</h3>
           <p className="item-description">{this.props.src.description}</p>
+          <div className="item-title-controls">
+            <i className="icon ion-ios-more"></i>
+          </div>
         </div>
         <div className="item-content">
           <div className="item-status">
-            <Barchart value={this.props.src.votes} total={this.props.src.votes_required} label={this.props.src.votes}></Barchart>
+            <h2 className="item-status-label">{this.props.src.votes}</h2>
           </div>
           <div className="item-actions">
             <button className="button large button-action" onClick={this.support}><i className="icon ion-ios-heart"></i>{this.props.src.action}</button>
