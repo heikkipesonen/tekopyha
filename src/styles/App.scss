@@ -22,10 +22,33 @@ body {
   position: relative;
   width: 100%;
   padding-bottom: 40%;
+  color: white;
 
   .header-image{
     @extend .container-absolute;
     @extend .background-container;
+  }
+
+  .header-text-container{
+    @extend .container-absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header-title, .header-text{
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+  }
+
+  .header-title{
+    margin: 0;
+    font-weight: 100;
+    font-size: 40pt;
+  }
+
+  .header-text{
+    margin: 0;
   }
 }
 
@@ -44,8 +67,7 @@ body {
 
   &:hover{
     background-color: #cb45c6;
-    border-color: darken(#cb45c6, 20);
-    color: darken(#cb45c6, 20);
+    color: white;
   }
 }
 

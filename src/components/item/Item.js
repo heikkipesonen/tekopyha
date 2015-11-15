@@ -1,4 +1,5 @@
 import React from 'react';
+import Barchart from './Barchart';
 
 class Item extends React.Component {
   constructor (props) {
@@ -14,10 +15,17 @@ class Item extends React.Component {
           <p className="item-description">{this.props.src.description}</p>
         </div>
         <div className="item-content">
-          <div className="item-status"></div>
-          <button className="button button-action">{this.props.src.action}</button>
+          <div className="item-status">
+            <Barchart value={this.props.src.votes} total={this.props.src.votes_required} label={this.props.src.votes}></Barchart>
+          </div>
+          <div className="item-actions">
+            <button className="button button-action">{this.props.src.action}</button>
+          </div>
         </div>
-        <div className="item-share"></div>
+        <div className="item-share">
+          <i className="icon ion-social-facebook item-button-share"></i>
+          <i className="icon ion-social-twitter item-button-share"></i>
+        </div>
       </div>
     );
   }
