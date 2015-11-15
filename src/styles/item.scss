@@ -1,0 +1,44 @@
+
+.item-list{
+  text-align: center;
+}
+
+.item{
+  background-color: #ffe6fe;
+  width: 25%;
+  vertical-align: top;
+  display: inline-block;
+  margin: 8px;
+}
+
+.item-title-wrapper{
+  padding: 16px;
+}
+
+.item-title{
+  text-align: center;
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+.item-description{
+  font-size: 10pt;
+  font-weight: 400;
+}
+
+.item-content{
+  padding: 16px;
+  color: #cb45c6;
+}
+
+.item-status{
+  height: 50px;
+  margin: 16px 0;
+  background-color: #f2caf1;
+}
+
+.item-share{
+  height: 80px;
+  background-color: #fcc5fa;
+  color: #e7005c;
+}
