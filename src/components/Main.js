@@ -10,7 +10,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-          <Header image="images/header.jpg" title="Pelasta maailma" text="Pelasta koko maailma yhdestä paikasta"></Header>
+          <Header title="Pelasta maailma" text="Pelasta koko maailma yhdestä paikasta"></Header>
           <Itemlist></Itemlist>
       </div>
     );

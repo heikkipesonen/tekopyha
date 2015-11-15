@@ -16,8 +16,9 @@ class Barchart extends React.Component {
 
       return (
         <div className="bar-chart">
-          <div className="bar-chart-track"></div>
-          <div className="bar-chart-bar" style={barStyle}></div>
+          <div className="bar-chart-track">
+            <div className="bar-chart-bar" style={barStyle}></div>
+          </div>
           <span className="bar-chart-label">{this.props.label}</span>
         </div>
       );

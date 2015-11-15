@@ -15,7 +15,7 @@ class Item extends React.Component {
   }
 
   render () {
-    let classNames = this.props.className + ' item';
+    let classNames = this.props.className ? this.props.className + ' ' : '' + 'item';
     if (this.props.src && (this.props.src.votes > this.props.src.votes_required)){
       classNames += ' item-complete';
     }
@@ -31,7 +31,7 @@ class Item extends React.Component {
             <Barchart value={this.props.src.votes} total={this.props.src.votes_required} label={this.props.src.votes}></Barchart>
           </div>
           <div className="item-actions">
-            <button className="button button-action" onClick={this.support}><i className="icon ion-ios-heart"></i>{this.props.src.action}</button>
+            <button className="button large button-action" onClick={this.support}><i className="icon ion-ios-heart"></i>{this.props.src.action}</button>
           </div>
         </div>
         <div className="item-share">

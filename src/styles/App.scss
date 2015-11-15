@@ -83,6 +83,12 @@ h1,h2{
     background-color: #cb45c6;
     color: white;
   }
+
+  &.large{
+    line-height: 32px;
+    border-radius: 32px;
+    font-size: 14pt;
+  }
 }
 
 @import 'item';
