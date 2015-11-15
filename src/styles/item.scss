@@ -1,3 +1,11 @@
+$item-padding-side: 32px;
+$item-padding-top: 16px;
+$item-width: 350px;
+$item-margin: 8px;
+$item-base-color: #ffe6fe;
+$item-hilight-color: #cb45c6;
+$item-complete-base-color: #E6FFF2;
+$item-complete-hilight-color: #45CB87;
 
 .item-list{
   text-align: center;
@@ -11,16 +19,57 @@
 .item{
   display: flex;
   flex-direction: column;
-  background-color: #ffe6fe;
-  width: 420px;
-  max-width: calc(100% - 16px);
+  background-color: $item-base-color;
+  width: $item-width;
+  max-width: calc(100% - 2*$item-margin);
   vertical-align: top;
-  margin: 8px;
+  margin: $item-margin;
   text-align: left;
+  transition: 0.2s ease-out;
+
+  &:hover{
+    background-color: darken($item-base-color, 5);
+    box-shadow: 0px 0px 40px 0px fade_out($item-hilight-color, 0.5);
+
+    .item-share{
+      background: rgb(255,117,248);
+    }
+  }
+
+  &.item-complete{
+    background-color: $item-complete-base-color;
+
+    .bar-chart-bar{
+      background-color: $item-complete-hilight-color;
+    }
+
+    .button{
+      border-color: $item-complete-hilight-color;
+      color: $item-complete-hilight-color;
+
+      &:hover{
+        color: white;
+        background-color: $item-complete-hilight-color;
+      }
+    }
+
+    .item-share{
+      background: darken($item-complete-base-color, 10);
+    }
+
+    &:hover{
+      background-color: darken($item-complete-base-color, 5);
+      box-shadow: 0px 0px 40px 0px fade_out($item-complete-hilight-color, 0.5);
+
+      .item-share{
+        background: darken($item-complete-base-color, 20);
+      }
+    }
+  }
 }
 
 .item-title-wrapper{
-  padding: 16px;
+  padding: $item-padding-top $item-padding-side 0 $item-padding-side;
 }
 
 .item-title{
@@ -35,8 +84,8 @@
 }
 
 .item-content{
-  padding: 0 16px;
-  color: #cb45c6;
+  padding: 0 $item-padding-side;
+  color: rgb(203, 69, 198);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -55,10 +104,16 @@
 }
 
 .item-share{
+  transition: 0.2s ease-out;
   text-align: center;
-  height: 90px;
   background-color: #fcc5fa;
-  color: #e7005c;
+  color: #292929;
+  padding: $item-padding-top $item-padding-side;
+}
+
+.share-text{
+
+  font-size: 8pt;
 }
 
 .item-button-share{
@@ -71,16 +126,18 @@
   border: 2px solid;
   border-radius: 50%;
   transition: 0.3s ease-out;
+  cursor: pointer;
+
 
   &:hover{
-    color: rgb(108, 108, 108);
+    color: #FFFFFF;
   }
 }
 
 
 .bar-chart-track{
   height: 50px;
-  background-color: fade_out(#cb45c6, 0.5);
+  background-color: fade_out($item-hilight-color, 0.5);
 }
 
 .bar-chart-label{
@@ -105,6 +162,6 @@
     top:0;
     left:0;
     height: 50px;
-    background-color: #cb45c6;
+    background-color: $item-hilight-color;
   }
 }
