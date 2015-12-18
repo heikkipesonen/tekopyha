@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './Item'
-
+import _ from 'lodash';
 
 class Itemlist extends React.Component {
 
@@ -14,6 +14,13 @@ class Itemlist extends React.Component {
 
   componentDidMount () {
     this.load();
+  }
+
+  vote = (id) => {
+    console.log(id);
+    let item = _.find(this.state.items, {id: id});
+    item.votes++;
+    console.log(item.votes);
   }
 
   load () {
@@ -31,7 +38,14 @@ class Itemlist extends React.Component {
       <div className="item-list-wrapper">
         <div className="item-list">
           {this.state.items.map((item, index) => {
-            return <Item src={item} key={index}></Item>
+            return <Item
+              id={item.id}
+              title={item.title}
+              description={item.description}
+              value={item.votes}
+              action={item.action}
+              vote={this.vote}
+              key={index}></Item>
           })}
         </div>
       </div>
